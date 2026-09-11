@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+._*
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# Local tooling and logs
+*.log
+.vite/
+.vercel/
