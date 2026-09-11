@@ -245,13 +245,18 @@ p { margin: 0; color: var(--steel); }
   filter: drop-shadow(0 24px 22px rgba(19, 38, 58, .12));
 }
 
+@media (min-width: 861px) {
+  .hero-floating-stage { max-width: 640px; }
+  .hero-floating-image { width: 118%; max-width: none; margin-left: -9%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-floating-stage {
     animation: none;
   }
 }
 
-.editorial-intro { padding: 84px 0 68px; }
+.editorial-intro { padding: 48px 0 68px; }
 .intro-grid { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 64px; }
 .intro-copy .section-head { margin-bottom: 22px; }
 .intro-highlight-quote { padding: 14px 18px; border-left: 3px solid var(--teal); background: var(--teal-soft); border-radius: 0 12px 12px 0; }
@@ -681,6 +686,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .mobile-sticky-cta { position: fixed; z-index: 45; left: 14px; right: 14px; bottom: 12px; min-height: 50px; display: grid; place-items: center; color: #fff; background: var(--red); border: 3px solid rgba(255,255,255,.92); border-radius: 999px; box-shadow: 0 12px 28px rgba(19,38,58,.24); font-family: var(--font-display); font-size: 14px; font-weight: 700; }
   .site-footer { padding-bottom: 90px; }
   .editorial-home-hero { padding: 34px 0 52px; }
+  .editorial-intro { padding-top: 40px; }
   .hero-layout { grid-template-columns: 1fr; gap: 38px; }
   .hero-content { align-items: flex-start; }
   .hero-title { font-size: clamp(2.1rem, 6vw, 2.75rem); }
@@ -741,13 +747,15 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .footer-brand { grid-column: auto; }
   .footer-bottom { flex-direction: column; }
   .editorial-home-hero { padding: 24px 0 42px; }
+  .editorial-intro { padding-top: 30px; }
   .hero-badge { font-size: 12px; padding: 6px 12px; margin-bottom: 16px; }
   .hero-title { font-size: 1.95rem; line-height: 1.15; }
   .hero-desc { font-size: .98rem; }
   .hero-actions { width: 100%; gap: 10px; margin-bottom: 24px; }
   .hero-actions .button { width: 100%; justify-content: center; }
   .hero-guarantees { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 18px; }
-  .hero-floating-stage { max-width: 420px; }
+  .hero-floating-stage { max-width: 450px; margin-top: -70px; margin-bottom: -35px; }
+  .hero-floating-image { width: 108%; max-width: none; margin-left: -4%; }
   .proof-facts-bento { grid-template-columns: 1fr; gap: 12px; }
   .audience-chips { flex-direction: column; width: 100%; }
   .audience-chip { width: 100%; justify-content: flex-start; }
