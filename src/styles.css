@@ -222,115 +222,27 @@ p { margin: 0; color: var(--steel); }
   flex-shrink: 0;
 }
 
-/* Floating Visual Stage (Empty placeholder ready for image replacement) */
+/* Hero artwork remains unframed so the transparent composition can float freely. */
 .hero-visual-col {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 .hero-floating-stage {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  border-radius: 24px;
-  background: #ffffff;
-  border: 1px solid rgba(220, 227, 232, .9);
-  box-shadow: 0 24px 56px -12px rgba(19, 38, 58, .12), 0 4px 16px -2px rgba(19, 38, 58, .04);
-  padding: 12px;
+  max-width: 560px;
   animation: heroFloating 6s ease-in-out infinite;
   will-change: transform;
 }
 
-.hero-image-slot {
+.hero-floating-image {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3.2;
-  min-height: 380px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: linear-gradient(145deg, #f8fafc 0%, #edf2f6 100%);
-  border: 1.5px dashed rgba(180, 195, 206, .75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: border-color .2s ease, background-color .2s ease;
-}
-
-.hero-image-slot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.hero-placeholder-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
-  padding: 28px 24px;
-}
-
-.hero-placeholder-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 18px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  display: grid;
-  place-items: center;
-  color: var(--steel);
-  box-shadow: 0 6px 16px rgba(19, 38, 58, .05);
-}
-
-.hero-placeholder-title {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.hero-placeholder-sub {
-  font-size: 12.5px;
-  color: var(--steel);
-  max-width: 230px;
-  line-height: 1.45;
-}
-
-.hero-float-badge {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 16px;
-  background: rgba(255, 255, 255, .96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(220, 227, 232, .9);
-  border-radius: 999px;
-  box-shadow: 0 12px 28px rgba(19, 38, 58, .09);
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--ink);
-  z-index: 3;
-}
-
-.hero-float-badge-top {
-  top: -14px;
-  right: 22px;
-}
-.hero-float-badge-top svg {
-  color: var(--teal);
-}
-
-.hero-float-badge-bottom {
-  bottom: -14px;
-  left: 22px;
-}
-.hero-float-badge-bottom svg {
-  color: var(--red);
+  height: auto;
+  filter: drop-shadow(0 24px 22px rgba(19, 38, 58, .12));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -773,8 +685,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .hero-content { align-items: flex-start; }
   .hero-title { font-size: clamp(2.1rem, 6vw, 2.75rem); }
   .hero-desc { max-width: 100%; font-size: 1.02rem; }
-  .hero-floating-stage { max-width: 480px; margin-inline: auto; }
-  .hero-image-slot { min-height: 320px; }
+  .hero-floating-stage { max-width: 520px; margin-inline: auto; }
   .intro-grid, .editorial-process-grid { grid-template-columns: 1fr; }
   .intro-grid { gap: 36px; }
   .audience-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
@@ -836,9 +747,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .hero-actions { width: 100%; gap: 10px; margin-bottom: 24px; }
   .hero-actions .button { width: 100%; justify-content: center; }
   .hero-guarantees { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 18px; }
-  .hero-image-slot { min-height: 270px; }
-  .hero-float-badge-top { top: -10px; right: 12px; padding: 7px 12px; font-size: 11px; }
-  .hero-float-badge-bottom { bottom: -10px; left: 12px; padding: 7px 12px; font-size: 11px; }
+  .hero-floating-stage { max-width: 420px; }
   .proof-facts-bento { grid-template-columns: 1fr; gap: 12px; }
   .audience-chips { flex-direction: column; width: 100%; }
   .audience-chip { width: 100%; justify-content: flex-start; }

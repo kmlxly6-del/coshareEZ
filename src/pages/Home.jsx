@@ -9,7 +9,6 @@ import {
   Clock,
   FileCheck2,
   FileText,
-  Image as ImageIcon,
   Layers,
   LockKeyhole,
   MapPinned,
@@ -239,25 +238,12 @@ export default function Home() {
 
           <div className="hero-visual-col">
             <div className="hero-floating-stage">
-              {/* Ruang gambar hero terapung — pengguna boleh gantikan bahagian ini dengan <img src="..." alt="..." /> bila bersedia */}
-              <div className="hero-image-slot">
-                <div className="hero-placeholder-inner">
-                  <div className="hero-placeholder-icon">
-                    <ImageIcon size={34} strokeWidth={1.5} />
-                  </div>
-                  <span className="hero-placeholder-title">Ruang Gambar Hero Terapung</span>
-                  <span className="hero-placeholder-sub">Sedia untuk dimasukkan gambar pilihan anda kemudian</span>
-                </div>
-              </div>
-
-              <div className="hero-float-badge hero-float-badge-top">
-                <ShieldCheck size={16} />
-                <span>100% Sah & Patuh Syariah</span>
-              </div>
-              <div className="hero-float-badge hero-float-badge-bottom">
-                <BadgeCheck size={16} />
-                <span>Saluran Rasmi Coshare</span>
-              </div>
+              <img
+                src="/images/coshareez-hero-floating.png"
+                alt="Kakitangan sektor awam bersama pilihan pembiayaan CoshareEZ"
+                className="hero-floating-image"
+                fetchPriority="high"
+              />
             </div>
           </div>
         </div>
