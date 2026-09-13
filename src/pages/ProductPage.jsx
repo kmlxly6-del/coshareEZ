@@ -11,7 +11,7 @@ export default function ProductPage() {
     <PageHero eyebrow={product.eyebrow} title={product.name} text={product.summary} aside={<div className={`product-mark ${product.tone}`}><Icon /><span>Maklumat produk</span><strong>Dikemas kini mengikut terma semasa</strong></div>}>
       <ButtonLink to="/semak-kelayakan">Semak untuk {product.name}</ButtonLink>
     </PageHero>
-    <section className="section"><div className="container two-col-content">
+    <section className="section"><div className="container two-col-content editorial-two-col">
       <div><SectionHead eyebrow="Kesesuaian asas" title={`Siapa yang boleh mempertimbangkan ${product.name}?`} text="Semakan sebenar bergantung pada kategori majikan, status pekerjaan, pendapatan, komitmen dan kriteria pihak pembiaya." /><Checklist items={product.suitable} /></div>
       <div className="info-panel"><ShieldCheck /><h3>Ketahui sebelum berkongsi dokumen</h3><p>CoshareEZ membantu menguruskan proses permohonan. Kami bukan pihak yang memberi kelulusan akhir.</p><SafeNote>Jangan buat bayaran pendahuluan kepada individu atau akaun peribadi.</SafeNote></div>
     </div></section>

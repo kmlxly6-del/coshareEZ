@@ -23,7 +23,7 @@ import { audienceTypes, products } from '../data'
 import { ButtonLink, CTASection, SectionHead } from '../components/UI'
 
 const productImages = {
-  'al-rajhi': '/images/coshareez-alrajhi-catalog.jpg',
+  'al-rajhi': '/images/coshareez-alrajhi-architecture.jpg',
   'coshare-prihatin': '/images/coshareez-prihatin-catalog.jpg',
 }
 

@@ -21,9 +21,11 @@ export function Breadcrumbs({ items }) {
 }
 
 export function PageHero({ eyebrow, title, text, children, aside }) {
+  const visual = aside
+
   return <section className="page-hero"><div className="container">
     <Breadcrumbs items={[{ label: title }]} />
-    <div className="page-hero-grid"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p>{children && <div className="hero-actions">{children}</div>}</div>{aside && <div className="page-hero-aside">{aside}</div>}</div>
+    <div className={`page-hero-grid ${visual ? '' : 'page-hero-grid-solo'}`}><div className="page-hero-copy"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p>{children && <div className="hero-actions">{children}</div>}</div>{visual && <div className="page-hero-aside">{visual}</div>}</div>
   </div></section>
 }
 
