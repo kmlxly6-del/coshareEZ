@@ -14,6 +14,48 @@ const guideImages = [
   '/images/coshareez-hero-consultation.jpg',
 ]
 
+const guideSections = [
+  {
+    id: 'potongan-gaji',
+    eyebrow: '01 · Slip gaji & komitmen',
+    title: 'Fahami ruang potongan sebelum memilih jumlah pembiayaan',
+    intro: 'Semakan yang baik bukan sekadar melihat jumlah yang boleh dipohon. Ia perlu mengambil kira baki pendapatan selepas semua potongan supaya komitmen baharu kekal munasabah.',
+    image: guideImages[0],
+    imageAlt: 'Kakitangan menyemak komitmen bulanan pada slip gaji',
+    points: [
+      ['Kenal pasti semua potongan', 'Senaraikan pembiayaan sedia ada, potongan ANGKASA, potongan majikan dan komitmen tetap lain yang muncul pada slip gaji.'],
+      ['Bandingkan ansuran dengan baki bersih', 'Ansuran lebih rendah tidak semestinya lebih baik jika tempoh lebih panjang meningkatkan jumlah bayaran keseluruhan.'],
+      ['Gunakan angka sebagai panduan', 'Had potongan yang dirujuk semasa saringan bukan jaminan kelulusan. Kriteria sebenar bergantung pada produk dan pihak pembiaya.'],
+    ],
+  },
+  {
+    id: 'dokumen-permohonan',
+    eyebrow: '02 · Dokumen & proses',
+    title: 'Sediakan dokumen mengikut peringkat, bukan semuanya sekaligus',
+    intro: 'Semakan awal hanya memerlukan maklumat asas pekerjaan dan julat kewangan. Dokumen sensitif diminta kemudian apabila pilihan berkaitan telah diterangkan.',
+    image: guideImages[1],
+    imageAlt: 'Pegawai menyemak dokumen permohonan secara profesional',
+    points: [
+      ['Semakan awal', 'Nama, nombor telefon, jenis majikan, status pekerjaan serta anggaran pendapatan dan potongan.'],
+      ['Semakan terperinci', 'Kad pengenalan, slip gaji terkini dan pengesahan pekerjaan mungkin diperlukan mengikut produk.'],
+      ['Sebelum menghantar', 'Pastikan tujuan dokumen diterangkan dan nombor pegawai serta saluran penerimaan boleh disahkan.'],
+    ],
+  },
+  {
+    id: 'elak-penipuan',
+    eyebrow: '03 · Keselamatan',
+    title: 'Berhenti dan semak apabila urusan terasa terlalu mendesak',
+    intro: 'Permohonan yang sah tidak memerlukan janji kelulusan, pindahan wang ke akaun peribadi atau tekanan untuk menyerahkan dokumen tanpa penerangan.',
+    image: guideImages[2],
+    imageAlt: 'Pegawai menerangkan proses pembiayaan melalui saluran rasmi',
+    points: [
+      ['Tiada bayaran pendahuluan', 'Jangan pindahkan wang untuk deposit, yuran ejen atau caj pemprosesan ke akaun individu.'],
+      ['Tiada jaminan kelulusan', 'Keputusan akhir tertakluk pada dokumen, syarat produk dan penilaian pihak pembiaya.'],
+      ['Sahkan sebelum berkongsi', 'Jika ragu-ragu, hentikan perbualan dan hubungi talian rasmi CoshareEZ di 017 447 4404.'],
+    ],
+  },
+]
+
 export function Financing() {
   return <>
     <PageHero eyebrow="Pilihan pembiayaan" title="Pembiayaan untuk warga sektor awam" text="Bandingkan dua produk aktif dan fahami skop pembiayaan sebelum mendapatkan semakan berdasarkan profil anda." image="/images/coshareez-hero-consultation.jpg" imageAlt="Pegawai menerangkan pilihan pembiayaan kepada pelanggan" imageLabel="Penerangan jelas sebelum komitmen">
@@ -37,7 +79,45 @@ export function ProcessPage() { return <><PageHero eyebrow="Cara memohon" title=
 
 export function DocumentsPage() { return <><PageHero eyebrow="Kelayakan & dokumen" title="Sediakan perkara yang betul pada waktu yang betul" text="Semakan awal menggunakan maklumat asas. Dokumen sensitif hanya diminta apabila pilihan berkaitan telah dikenal pasti." image="/images/coshareez-prihatin-catalog.jpg" imageAlt="Kakitangan sektor awam menyediakan maklumat untuk semakan" imageLabel="Semakan awal tanpa dokumen sensitif"><ButtonLink to="/semak-kelayakan">Semak Kelayakan</ButtonLink></PageHero><section className="section"><div className="container two-col-content editorial-two-col"><div><SectionHead eyebrow="Kelayakan asas" title="Siapa yang boleh membuat semakan?" /><Checklist items={['Kakitangan kerajaan Persekutuan atau Negeri', 'Kakitangan badan berkanun dan PBT', 'Kakitangan GLC yang berada dalam kategori terpilih', 'Status dan tempoh pekerjaan tertakluk pada produk']} /></div><div className="document-stack"><div><FileText /><span>Kad pengenalan</span></div><div><FileCheck2 /><span>Slip gaji terkini</span></div><div><Building2 /><span>Pengesahan pekerjaan</span></div><p>Senarai tepat boleh berbeza mengikut produk. Jangan hantar dokumen sebelum menerima arahan melalui saluran rasmi.</p></div></div></section><CTASection /></> }
 
-export function Guides() { return <><PageHero eyebrow="Pusat panduan" title="Maklumat yang membantu anda bertanya soalan yang betul" text="Panduan ringkas untuk memahami kelayakan, dokumen, proses dan keselamatan pembiayaan." image="/images/coshareez-section2-commitments.jpg" imageAlt="Kakitangan meneliti komitmen kewangan" imageLabel="Panduan ringkas, keputusan lebih jelas" /><section className="section"><div className="container guide-grid editorial-guide-grid">{guideCards.map(({ icon: Icon, title, text }, index) => <article key={title}><div className="guide-card-image"><img src={guideImages[index]} alt="" /></div><div className="guide-card-copy"><Icon /><h2>{title}</h2><p>{text}</p><span className="coming-label">Artikel sedang disediakan</span></div></article>)}</div></section></> }
+export function Guides() {
+  return <>
+    <PageHero eyebrow="Pusat panduan" title="Buat keputusan dengan maklumat yang lebih tersusun" text="Rujukan praktikal untuk memahami potongan gaji, dokumen permohonan dan langkah keselamatan sebelum anda membuat sebarang komitmen." />
+
+    <section className="guide-index-section">
+      <div className="container guide-index">
+        <span className="guide-index-label">Dalam panduan ini</span>
+        <nav aria-label="Kandungan panduan">
+          {guideSections.map((guide, index) => <a href={`#${guide.id}`} key={guide.id}><span>0{index + 1}</span>{guide.title}</a>)}
+        </nav>
+      </div>
+    </section>
+
+    <section className="guide-articles">
+      <div className="container">
+        {guideSections.map((guide, index) => {
+          const Icon = guideCards[index].icon
+          return <article className="guide-article" id={guide.id} key={guide.id}>
+            <figure className="guide-article-media">
+              <img src={guide.image} alt={guide.imageAlt} />
+              <figcaption><Icon size={17} />{guide.eyebrow}</figcaption>
+            </figure>
+            <div className="guide-article-content">
+              <span className="eyebrow">{guide.eyebrow}</span>
+              <h2>{guide.title}</h2>
+              <p className="guide-article-intro">{guide.intro}</p>
+              <div className="guide-point-list">
+                {guide.points.map(([title, text], pointIndex) => <div key={title}><span>0{pointIndex + 1}</span><div><h3>{title}</h3><p>{text}</p></div></div>)}
+              </div>
+            </div>
+          </article>
+        })}
+        <SafeNote>Maklumat ini ialah panduan umum. Kelayakan, jumlah, tempoh dan dokumen sebenar tertakluk pada produk serta penilaian pihak pembiaya.</SafeNote>
+      </div>
+    </section>
+
+    <CTASection title="Sudah faham perkara asas? Mulakan semakan awal" text="Kongsi maklumat asas pekerjaan dan julat kewangan. Pegawai akan menerangkan pilihan berkaitan sebelum meminta dokumen sensitif." />
+  </>
+}
 
 export function About() { return <><PageHero eyebrow="Mengenai kami" title="Bantuan yang jelas, melalui saluran yang boleh disahkan" text="CoshareEZ ialah agensi pemasaran sah bagi produk Coshare dan memberi fokus kepada proses permohonan warga sektor awam." image="/images/coshareez-hero-consultation.jpg" imageAlt="Pegawai CoshareEZ memberi penerangan kepada pelanggan" imageLabel="Jelas · Teratur · Selamat" /><section className="section"><div className="container two-col-content editorial-two-col"><div><SectionHead eyebrow="Peranan CoshareEZ" title="Kami membantu proses. Pihak pembiaya membuat keputusan." text="Pegawai membantu semakan awal, menerangkan dokumen dan menguruskan langkah permohonan. Kami tidak menjanjikan kelulusan atau meminta bayaran pendahuluan." /></div><div className="principles-list"><div><span>01</span><h3>Maklumat yang mudah difahami</h3></div><div><span>02</span><h3>Perlindungan data sejak awal</h3></div><div><span>03</span><h3>Urusan melalui identiti rasmi</h3></div></div></div></section><section className="section soft-section"><div className="container partnership-panel"><div><span className="eyebrow">Kerjasama organisasi</span><h2>Saluran penerangan untuk kumpulan kakitangan</h2><p>CoshareEZ terbuka kepada program penerangan yang terancang bersama GLC, syarikat tersenarai, badan berkanun dan organisasi terpilih. Skop kelayakan, bahan komunikasi dan proses rujukan disahkan sebelum program dimulakan.</p></div><ButtonLink to="/hubungi" secondary>Bincang kerjasama</ButtonLink></div></section></> }
 
