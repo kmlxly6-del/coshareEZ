@@ -9,9 +9,9 @@ const productImages = {
 }
 
 const guideImages = [
-  '/images/coshareez-section2-commitments.jpg',
-  '/images/coshareez-section2-professional-v2.jpg',
-  '/images/coshareez-hero-consultation.jpg',
+  '/images/coshareez-guide-slip-gaji.jpg',
+  '/images/coshareez-guide-dokumen.jpg',
+  '/images/coshareez-guide-keselamatan.jpg',
 ]
 
 const guideSections = [
@@ -88,7 +88,7 @@ export function ProcessPage() {
     <PageHero eyebrow="Cara memohon" title="Ketahui apa yang berlaku pada setiap langkah" highlight="setiap langkah" text="Proses yang jelas membantu anda menyediakan maklumat tepat tanpa berkongsi dokumen terlalu awal." aside={processVisual}>
       <ButtonLink to="/semak-kelayakan">Mulakan Semakan Awal</ButtonLink>
     </PageHero>
-    <section className="section"><div className="container process-page-layout"><figure className="editorial-side-photo"><img src="/images/coshareez-hero-consultation.jpg" alt="Sesi penerangan antara pegawai dan pelanggan" /><figcaption><strong>Bimbingan manusia, dari awal hingga keputusan</strong><span>Dokumen diminta hanya selepas pilihan diterangkan.</span></figcaption></figure><div className="process-list">{processSteps.map(({ icon: Icon, title, text }, i) => <div key={title}><span>0{i + 1}</span><Icon /><div><h2>{title}</h2><p>{text}</p></div></div>)}</div></div></section>
+    <section className="section"><div className="container process-page-layout"><figure className="editorial-side-photo process-editorial-artwork"><img src="/images/coshareez-process-consultation.jpg" alt="Bimbingan manusia dari awal permohonan hingga keputusan" /></figure><div className="process-list">{processSteps.map(({ icon: Icon, title, text }, i) => <div key={title}><span>0{i + 1}</span><Icon /><div><h2>{title}</h2><p>{text}</p></div></div>)}</div></div></section>
     <CTASection />
   </>
 }
