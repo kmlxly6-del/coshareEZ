@@ -3,12 +3,28 @@ import { FileCheck2, Scale, ShieldCheck } from 'lucide-react'
 import { products } from '../data'
 import { ButtonLink, Checklist, CTASection, PageHero, SafeNote, SectionHead } from '../components/UI'
 
+const productHeroImages = {
+  'al-rajhi': {
+    src: '/images/coshareez-alrajhi-hero.png',
+    alt: 'Bangunan Al Rajhi dengan pilihan pembiayaan yang mudah disemak',
+  },
+  'coshare-prihatin': {
+    src: '/images/coshareez-prihatin-hero.png',
+    alt: 'Bangunan Coshare sebagai rakan kewangan dipercayai',
+  },
+}
+
 export default function ProductPage() {
   const { slug } = useParams()
   const product = products.find(item => item.slug === slug) || products[0]
   const Icon = product.icon
+  const heroImage = productHeroImages[product.slug]
+  const heroAside = heroImage
+    ? <div className="page-hero-floating-visual"><img src={heroImage.src} alt={heroImage.alt} /></div>
+    : <div className={`product-mark ${product.tone}`}><Icon /><span>Maklumat produk</span><strong>Dikemas kini mengikut terma semasa</strong></div>
+
   return <>
-    <PageHero eyebrow={product.eyebrow} title={product.name} text={product.summary} aside={<div className={`product-mark ${product.tone}`}><Icon /><span>Maklumat produk</span><strong>Dikemas kini mengikut terma semasa</strong></div>}>
+    <PageHero eyebrow={product.eyebrow} title={product.name} text={product.summary} aside={heroAside}>
       <ButtonLink to="/semak-kelayakan">Semak untuk {product.name}</ButtonLink>
     </PageHero>
     <section className="section"><div className="container two-col-content editorial-two-col">

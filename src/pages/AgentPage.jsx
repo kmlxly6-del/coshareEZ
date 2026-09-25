@@ -1,14 +1,18 @@
 import { useState } from 'react'
-import { BadgeCheck, BookOpenCheck, BriefcaseBusiness, CheckCircle2, Megaphone, ShieldCheck, UsersRound } from 'lucide-react'
+import { BadgeCheck, BookOpenCheck, BriefcaseBusiness, CheckCircle2, Megaphone, ShieldCheck } from 'lucide-react'
 import { ButtonLink, Checklist, PageHero, SafeNote, SectionHead } from '../components/UI'
 
 export default function AgentPage() {
   const [sent, setSent] = useState(false)
+  const agentVisual = <div className="page-hero-floating-visual">
+    <img src="/images/coshareez-agent-hero.png" alt="Rangkaian ejen CoshareEZ daripada pelbagai latar profesional" />
+  </div>
+
   return <>
-    <PageHero eyebrow="Peluang ejen CoshareEZ" title="Bina kerjaya sebagai ejen pembiayaan yang dipercayai" text="Sertai rangkaian yang menekankan latihan produk, pengurusan kes dan tatakelakuan—bukan sekadar mengejar jualan." aside={<div className="agent-orbit"><UsersRound /><span>Latihan</span><span>Sokongan</span><span>Pematuhan</span></div>}>
+    <PageHero eyebrow="Peluang ejen CoshareEZ" title="Bina kerjaya sebagai ejen pembiayaan yang dipercayai" highlight="yang dipercayai" text="Sertai rangkaian yang menekankan latihan produk, pengurusan kes dan tatakelakuan—bukan sekadar mengejar jualan." aside={agentVisual}>
       <ButtonLink to="/jadi-ejen#permohonan">Mohon Menjadi Ejen</ButtonLink>
     </PageHero>
-    <section className="section"><div className="container"><SectionHead eyebrow="Peranan & sokongan" title="Sistem kerja yang jelas dari hari pertama" text="Ejen membantu pelanggan memahami pilihan, menjaga kerahsiaan dan menggunakan proses serta bahan komunikasi yang telah diluluskan." align="center" />
+    <section className="section"><div className="container"><SectionHead eyebrow="Peranan & sokongan" title="Sistem kerja yang jelas dari hari pertama" highlight="hari pertama" text="Ejen membantu pelanggan memahami pilihan, menjaga kerahsiaan dan menggunakan proses serta bahan komunikasi yang telah diluluskan." align="center" />
       <div className="agent-support-grid"><div><BookOpenCheck /><h3>Latihan berterusan</h3><p>Pelajari produk, dokumen, komunikasi pelanggan dan batas dakwaan sebelum mengendalikan kes.</p></div><div><Megaphone /><h3>Bahan pemasaran</h3><p>Gunakan bahan dan mesej kempen yang selaras supaya maklumat pelanggan kekal tepat.</p></div><div><BriefcaseBusiness /><h3>Pengurusan kes</h3><p>Susun prospek dan ikuti perkembangan kes melalui saluran sokongan yang ditetapkan.</p></div><div><ShieldCheck /><h3>Tatakelakuan</h3><p>Tiada bayaran pendahuluan, jaminan lulus atau pengubahsuaian dokumen.</p></div></div>
     </div></section>
     <section className="section soft-section"><div className="container two-col-content editorial-two-col"><div><SectionHead eyebrow="Siapa yang sesuai" title="Pengalaman membantu. Integriti diwajibkan." /><Checklist items={['Profesional jualan, insurans, hartanah atau unit amanah', 'Calon baharu yang sanggup belajar dan mengikuti proses', 'Individu dengan komunikasi jelas serta disiplin susulan', 'Calon yang bersedia mematuhi perlindungan data pelanggan']} /></div><div className="info-panel"><BadgeCheck /><h3>Pendapatan berasaskan prestasi</h3><p>Komisen tertakluk kepada terma pelantikan dan kes yang berjaya diselesaikan. Tiada jaminan jumlah pendapatan.</p><SafeNote>Butiran komisen diterangkan semasa saringan rasmi.</SafeNote></div></div></section>

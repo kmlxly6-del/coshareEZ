@@ -18,7 +18,7 @@ export default function Eligibility() {
     setStep(step + 1)
   }
   return <>
-    <PageHero eyebrow="Semakan awal" title="Semak kelayakan anda dengan beberapa soalan ringkas" text="Langkah pertama tidak memerlukan nombor IC atau slip gaji. Maklumat ini membantu pegawai memahami profil asas anda." aside={<div className="privacy-bubble"><LockKeyhole /><strong>Privasi dari langkah pertama</strong><span>Tiada dokumen sensitif diperlukan sekarang.</span></div>} />
+    <PageHero eyebrow="Semakan awal" title="Semak kelayakan anda dengan beberapa soalan ringkas" highlight="kelayakan anda" text="Langkah pertama tidak memerlukan nombor IC atau slip gaji. Maklumat ini membantu pegawai memahami profil asas anda." aside={<div className="privacy-bubble"><LockKeyhole /><strong>Privasi dari langkah pertama</strong><span>Tiada dokumen sensitif diperlukan sekarang.</span></div>} />
     <section className="section form-section"><div className="container form-layout">
       <div className="stepper"><div className={step >= 1 ? 'active' : ''}><span>1</span><p><strong>Profil asas</strong>Maklumat pekerjaan</p></div><div className={step >= 2 ? 'active' : ''}><span>2</span><p><strong>Komitmen</strong>Julat kewangan</p></div><div className={step >= 3 ? 'active' : ''}><span>3</span><p><strong>Selesai</strong>Langkah seterusnya</p></div></div>
       {step < 3 ? <form className="eligibility-form" onSubmit={next} noValidate>

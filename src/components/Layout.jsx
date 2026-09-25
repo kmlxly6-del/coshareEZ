@@ -124,12 +124,13 @@ export function Header() {
           <div className={`main-nav-pill ${isScrolled ? 'is-pill' : ''}`}>
             <nav className="main-nav" aria-label="Navigasi utama">
               <Link className="brand" to="/" aria-label="CoshareEZ, laman utama">
-                <img src="/images/coshareez-logo.png" alt="CoshareEZ" />
+                <img src="/images/coshareez-logo-navbar.png" alt="CoshareEZ" />
               </Link>
               <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Buka menu">
                 {open ? <X /> : <Menu />}
               </button>
               <div className={`nav-links ${open ? 'is-open' : ''}`}>
+                <NavLink to="/" end onClick={() => setOpen(false)}>Home</NavLink>
                 <Dropdown label="Pembiayaan" to="/pembiayaan" items={financingLinks} onNavigate={() => setOpen(false)} />
                 <NavLink to="/cara-memohon" onClick={() => setOpen(false)}>Cara Memohon</NavLink>
                 <NavLink to="/panduan" onClick={() => setOpen(false)}>Panduan</NavLink>
@@ -151,7 +152,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src="/images/coshareez-logo.png" alt="CoshareEZ" />
+          <img src="/images/coshareez-logo-footer.png" alt="CoshareEZ" />
           <p>Saluran bantuan permohonan pembiayaan untuk kakitangan kerajaan, badan berkanun, PBT dan GLC terpilih.</p>
           <span className="footer-note"><ShieldCheck size={16} /> Tiada bayaran pendahuluan</span>
         </div>
@@ -177,7 +178,10 @@ export function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} CoshareEZ Sdn Bhd</span>
+        <span className="footer-credit">
+          Copyright © 2026 CoshareEz Sdn Bhd | Web Designed by{' '}
+          <a href="https://vibrantad.com" target="_blank" rel="noreferrer">Vibrant Tactic Sdn Bhd (VibrantAd)</a>
+        </span>
         <div><Link to="/notis-privasi">Notis Privasi</Link><Link to="/terma">Terma & Syarat</Link></div>
       </div>
     </footer>

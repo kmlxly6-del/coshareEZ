@@ -20,7 +20,7 @@ import {
   UserRoundCheck,
 } from 'lucide-react'
 import { audienceTypes, products } from '../data'
-import { ButtonLink, CTASection, SectionHead } from '../components/UI'
+import { ButtonLink, CTASection, HighlightedTitle, SectionHead } from '../components/UI'
 
 const productImages = {
   'al-rajhi': '/images/coshareez-alrajhi-architecture.jpg',
@@ -210,11 +210,11 @@ export default function Home() {
               <span className="hero-badge-dot" />
               <span>Agensi Pemasaran Sah Pembiayaan Awam</span>
             </div>
-            <h1 className="hero-title">Fahami pilihan sebelum membuat komitmen</h1>
+            <h1 className="hero-title"><HighlightedTitle text="Fahami pilihan sebelum membuat komitmen" highlight="sebelum membuat komitmen" /></h1>
             <p className="hero-desc">Semak kelayakan, anggaran ansuran dan dokumen bersama pegawai sah CoshareEZ melalui proses digital yang jelas, telus dan tanpa sebarang bayaran pendahuluan.</p>
             <div className="hero-actions">
               <ButtonLink to="/semak-kelayakan" className="hero-btn-primary">
-                Semak Kelayakan Saya <ArrowRight size={16} />
+                Semak Kelayakan Saya
               </ButtonLink>
               <ButtonLink to="/kelayakan-dokumen" secondary className="hero-btn-secondary">
                 Lihat syarat kelayakan
@@ -257,6 +257,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Mengapa semakan awal penting"
               title="Keputusan kewangan lebih baik bermula dengan gambaran yang jelas"
+              highlight="gambaran yang jelas"
               text="Komitmen sedia ada, tempoh pembiayaan dan syarat produk boleh memberi kesan berbeza kepada setiap pemohon. CoshareEZ membantu anda memahami pilihan yang tepat sebelum dokumen lengkap diserahkan."
             />
             <div className="intro-highlight-quote">
@@ -305,7 +306,7 @@ export default function Home() {
       <div className="container">
         <div className="agitate-header">
           <span className="eyebrow light">Sebelum anda memohon</span>
-          <h2>Bandingkan perkara yang memberi kesan kepada komitmen anda</h2>
+          <h2><HighlightedTitle text="Bandingkan perkara yang memberi kesan kepada komitmen anda" highlight="komitmen anda" /></h2>
           <p>Ansuran bulanan yang kelihatan mampu milik belum menggambarkan keseluruhan keputusan. Teliti 3 faktor utama ini sebelum menyerahkan dokumen lengkap.</p>
         </div>
 
@@ -346,7 +347,7 @@ export default function Home() {
         <div className="catalog-header">
           <div className="catalog-header-text">
             <span className="eyebrow">Pilihan Laluan Anda</span>
-            <h2>Pembiayaan atau peluang kerjaya</h2>
+            <h2><HighlightedTitle text="Pembiayaan atau peluang kerjaya" highlight="peluang kerjaya" /></h2>
             <p>Pilih laluan mengikut keperluan anda — bandingkan pakej pembiayaan patuh Syariah untuk warga sektor awam, atau sertai rangkaian konsultan bertauliah CoshareEZ.</p>
           </div>
           <Link className="catalog-compare-btn" to="/pembiayaan">
@@ -427,7 +428,7 @@ export default function Home() {
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">Langkah Permohonan Berperingkat</span>
-          <h2>Cara ia berfungsi dari awal hingga selesai</h2>
+          <h2><HighlightedTitle text="Cara ia berfungsi dari awal hingga selesai" highlight="awal hingga selesai" /></h2>
           <p>Kami membahagikan urusan kepada empat langkah berperingkat supaya anda sentiasa faham apa yang berlaku tanpa berkongsi dokumen sensitif secara terburu-buru.</p>
         </div>
 
@@ -435,8 +436,8 @@ export default function Home() {
           <div className="process-visual-column">
             <div className="process-photo-card">
               <img
-                src="/images/coshareez-section2-professional-v2.jpg"
-                alt="Pegawai CoshareEZ membimbing pemohon sektor awam meneliti pilihan pembiayaan"
+                src="/images/coshareez-home-process.jpg"
+                alt="Pegawai menyemak dokumen pembiayaan sebelum memulakan semakan awal"
                 loading="lazy"
               />
               <div className="process-photo-overlay">
@@ -515,7 +516,7 @@ export default function Home() {
       <div className="container">
         <div className="section-head center">
           <span className="eyebrow">Ketelusan & Integriti</span>
-          <h2>Keyakinan dibina melalui amalan yang boleh disahkan</h2>
+          <h2><HighlightedTitle text="Keyakinan dibina melalui amalan yang boleh disahkan" highlight="boleh disahkan" /></h2>
           <p>Kami tidak mereka-reka testimoni. Pemohon sektor awam berhak menilai identiti agensi, ketelusan sifar fi, dan saluran perundingan yang selamat sebelum memulakan urusan.</p>
         </div>
 
@@ -565,7 +566,7 @@ export default function Home() {
           <div className="guide-head-row">
             <div>
               <span className="eyebrow">Pusat Panduan & Maklumat</span>
-              <h2>Buat keputusan berasaskan maklumat yang sahih</h2>
+              <h2><HighlightedTitle text="Buat keputusan berasaskan maklumat yang sahih" highlight="maklumat yang sahih" /></h2>
               <p>Rujukan ringkas tentang formula potongan gaji, senarai dokumen rasmi, dan panduan mengelak sindiket penipuan pembiayaan sektor awam.</p>
             </div>
             <Link to="/panduan" className="guide-view-all-btn">

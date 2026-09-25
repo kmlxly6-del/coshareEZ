@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Check, ChevronRight, Phone, ShieldCheck } from 'lucide-react'
 
-export function SectionHead({ eyebrow, title, text, align = 'left' }) {
+export function HighlightedTitle({ text, highlight }) {
+  if (!highlight || typeof text !== 'string') return text
+
+  const start = text.indexOf(highlight)
+  if (start === -1) return text
+
+  return <>{text.slice(0, start)}<span className="title-accent">{highlight}</span>{text.slice(start + highlight.length)}</>
+}
+
+export function SectionHead({ eyebrow, title, highlight, text, align = 'left' }) {
   return <div className={`section-head ${align === 'center' ? 'center' : ''}`}>
     {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-    <h2>{title}</h2>
+    <h2><HighlightedTitle text={title} highlight={highlight} /></h2>
     {text && <p>{text}</p>}
   </div>
 }
@@ -20,12 +29,12 @@ export function Breadcrumbs({ items }) {
   </nav>
 }
 
-export function PageHero({ eyebrow, title, text, children, aside }) {
+export function PageHero({ eyebrow, title, highlight, text, children, aside }) {
   const visual = aside
 
   return <section className="page-hero"><div className="container">
     <Breadcrumbs items={[{ label: title }]} />
-    <div className={`page-hero-grid ${visual ? '' : 'page-hero-grid-solo'}`}><div className="page-hero-copy"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p>{children && <div className="hero-actions">{children}</div>}</div>{visual && <div className="page-hero-aside">{visual}</div>}</div>
+    <div className={`page-hero-grid ${visual ? '' : 'page-hero-grid-solo'}`}><div className="page-hero-copy"><span className="eyebrow">{eyebrow}</span><h1><HighlightedTitle text={title} highlight={highlight} /></h1><p>{text}</p>{children && <div className="hero-actions">{children}</div>}</div>{visual && <div className="page-hero-aside">{visual}</div>}</div>
   </div></section>
 }
 
@@ -39,6 +48,7 @@ export function Checklist({ items }) {
 
 export function CTASection({
   title = 'Mulakan dengan semakan awal, bukan komitmen',
+  highlight = 'semakan awal',
   text = 'Jawab beberapa soalan ringkas untuk membantu pegawai memahami profil anda. Dokumen sensitif hanya diminta pada langkah seterusnya jika diperlukan.'
 }) {
   return (
@@ -46,7 +56,7 @@ export function CTASection({
       <div className="container cta-shell">
         <div className="cta-content">
           <span className="eyebrow light">Langkah seterusnya</span>
-          <h2>{title}</h2>
+          <h2><HighlightedTitle text={title} highlight={highlight} /></h2>
           <p>{text}</p>
           <div className="cta-guarantees">
             <div className="cta-guarantee-item">
