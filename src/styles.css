@@ -109,9 +109,8 @@ p { margin: 0; color: var(--steel); }
 
 .editorial-home-hero {
   position: relative;
-  padding: 44px 0 68px;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  border-bottom: 1px solid var(--line);
+  padding: 44px 0 0;
+  background: #fff;
 }
 
 .hero-layout {
@@ -122,6 +121,8 @@ p { margin: 0; color: var(--steel); }
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -228,28 +229,39 @@ p { margin: 0; color: var(--steel); }
 .hero-visual-col {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  align-self: stretch;
   width: 100%;
 }
 
 .hero-floating-stage {
   position: relative;
   width: 100%;
-  max-width: 560px;
-  animation: heroFloating 6s ease-in-out infinite;
-  will-change: transform;
+  max-width: 460px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-floating-stage::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #fff 0%, rgba(255,255,255,.92) 2%, transparent 10%, transparent 90%, rgba(255,255,255,.92) 98%, #fff 100%),
+    linear-gradient(180deg, #fff 0%, rgba(255,255,255,.52) 2.5%, transparent 9%, transparent 88%, rgba(255,255,255,.88) 97%, #fff 100%);
 }
 
 .hero-floating-image {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 24px 22px rgba(19, 38, 58, .12));
 }
 
 @media (min-width: 861px) {
-  .hero-floating-stage { max-width: 640px; }
-  .hero-floating-image { width: 118%; max-width: none; margin-left: -9%; }
+  .hero-floating-stage { max-width: 500px; }
+  .hero-floating-image { width: 100%; max-width: none; margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -775,9 +787,9 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .footer-brand { grid-column: 1 / -1; }
   .mobile-sticky-cta { position: fixed; z-index: 45; left: 14px; right: 14px; bottom: 12px; min-height: 50px; display: grid; place-items: center; color: #fff; background: var(--red); border: 3px solid rgba(255,255,255,.92); border-radius: 999px; box-shadow: 0 12px 28px rgba(19,38,58,.24); font-family: var(--font-display); font-size: 14px; font-weight: 700; }
   .site-footer { padding-bottom: 90px; }
-  .editorial-home-hero { padding: 34px 0 52px; }
+  .editorial-home-hero { padding: 34px 0 0; }
   .editorial-intro { padding-top: 40px; }
-  .hero-layout { grid-template-columns: 1fr; gap: 38px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 26px; }
   .hero-content { align-items: flex-start; }
   .hero-title { font-size: clamp(2.1rem, 6vw, 2.75rem); }
   .hero-desc { max-width: 100%; font-size: 1.02rem; }
@@ -850,7 +862,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand { grid-column: auto; }
   .footer-bottom { flex-direction: column; }
-  .editorial-home-hero { padding: 24px 0 42px; }
+  .editorial-home-hero { padding: 24px 0 0; }
   .editorial-intro { padding-top: 30px; }
   .hero-badge { font-size: 12px; padding: 6px 12px; margin-bottom: 16px; }
   .hero-title { font-size: 1.95rem; line-height: 1.15; }
@@ -858,8 +870,10 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .hero-actions { width: 100%; gap: 10px; margin-bottom: 24px; }
   .hero-actions .button { width: 100%; justify-content: center; }
   .hero-guarantees { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 18px; }
-  .hero-floating-stage { max-width: 450px; margin-top: -70px; margin-bottom: -35px; }
-  .hero-floating-image { width: 108%; max-width: none; margin-left: -4%; }
+  .hero-visual-col { width: calc(100% + 36px); margin-inline: -18px; }
+  .hero-floating-stage { flex: 0 0 100%; width: 100%; max-width: none; margin: -48px 0 0; }
+  .hero-floating-stage::after { display: none; }
+  .hero-floating-image { width: 100%; max-width: none; margin-left: 0; }
   .proof-facts-bento { grid-template-columns: 1fr; gap: 12px; }
   .audience-chips { flex-direction: column; width: 100%; }
   .audience-chip { width: 100%; justify-content: flex-start; }

@@ -239,8 +239,8 @@ export default function Home() {
           <div className="hero-visual-col">
             <div className="hero-floating-stage">
               <img
-                src="/images/coshareez-hero-floating.png"
-                alt="Kakitangan sektor awam bersama pilihan pembiayaan CoshareEZ"
+                src="/images/coshareez-home-family-hero.jpg"
+                alt="Keluarga Malaysia merancang perbelanjaan harian bersama"
                 className="hero-floating-image"
                 fetchPriority="high"
               />
