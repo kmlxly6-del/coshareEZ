@@ -306,7 +306,7 @@ p { margin: 0; color: var(--steel); }
 .catalog-card:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
 .catalog-card-media { position: relative; width: 100%; height: 220px; overflow: hidden; background: var(--sand); }
 .catalog-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease, filter .35s ease; }
-.catalog-card:first-child .catalog-card-media img { object-position: 50% 26%; }
+.catalog-card:first-child .catalog-card-media img { object-position: 50% 88%; }
 .catalog-card:nth-child(2) .catalog-card-media img { object-position: 50% 24%; }
 .catalog-card.agent-card .catalog-card-media img { object-position: 62% center; }
 .catalog-card:hover .catalog-card-media img { transform: scale(1.03); filter: saturate(1.03); }
@@ -562,6 +562,7 @@ p { margin: 0; color: var(--steel); }
 .product-panel-photo::after { display: none; }
 .product-panel-media { position: relative; height: 250px; overflow: hidden; background: var(--sand); }
 .product-panel-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.product-panel.navy .product-panel-media img { object-position: 50% 88%; }
 .product-panel-photo:hover .product-panel-media img { transform: scale(1.025); }
 .product-panel-media > span { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; color: var(--ink); background: rgba(255, 255, 255, .94); border-radius: 999px; box-shadow: 0 7px 20px rgba(19, 38, 58, .12); font-size: 12px; font-weight: 700; }
 .product-panel-media > span svg { color: var(--teal); }
@@ -618,6 +619,7 @@ p { margin: 0; color: var(--steel); }
 .form-heading > span { color: var(--red); font-size: 13px; font-weight: 700; }
 .form-heading h2 { margin: 8px 0 10px; font-size: 2rem; }
 .fields-grid, .agent-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 32px; }
+.fields-grid .full { grid-column: 1 / -1; }
 label { display: grid; gap: 7px; color: var(--ink); font-size: 14px; font-weight: 700; }
 input, select, textarea { width: 100%; color: var(--ink); background: #fff; border: 1px solid #c9d2d9; border-radius: 12px; padding: 12px 14px; outline: 0; }
 input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(24,118,111,.12); }

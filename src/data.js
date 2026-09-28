@@ -133,6 +133,20 @@ export const contactDetails = [
 ]
 
 export const eligibilityQuestions = [
+  {
+    key: 'inquiryType',
+    label: 'Jenis pertanyaan / inquiry',
+    type: 'select',
+    full: true,
+    options: [
+      'Semakan kelayakan pembiayaan',
+      'Pertanyaan produk Al Rajhi',
+      'Pertanyaan produk Coshare Prihatin',
+      'Semakan status permohonan',
+      'Kelayakan dan dokumen',
+      'Pertanyaan umum',
+    ],
+  },
   { key: 'name', label: 'Nama penuh', type: 'text', placeholder: 'Seperti dalam kad pengenalan' },
   { key: 'phone', label: 'Nombor telefon', type: 'tel', placeholder: 'Contoh: 012 345 6789' },
   {
